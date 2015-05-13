@@ -18,6 +18,7 @@ build: Dockerfile
 run: clean-containers build
 	$(eval CONTAINER=$(shell docker run -d -p 4001:4001 -p 7001:7001 -p 2379:2379 -p 2380:2380 $(IMAGE)))
 	curl -L http://$$(boot2docker ip):2379/v2/keys/
+	docker images | grep $(IMAGE) | awk '{ print $$(NF-1), $$NF }'
 
 clean-containers:
 	-docker ps -a | grep -v IMAGE | awk '{ print $$1 }' | xargs docker rm -f

@@ -16,6 +16,8 @@ docker-etcd-slim is a container for an etcd server, made smaller with a few tech
 $ make
 curl -L http://$(boot2docker ip):2379/v2/keys/
 {"action":"get","node":{"dir":true}}
+docker images | grep mcandre/docker-etcd-slim | awk '{ print $(NF-1), $NF }'
+158.9 MB
 ```
 
 # REQUIREMENTS
