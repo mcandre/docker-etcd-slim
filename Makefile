@@ -1,6 +1,6 @@
 IMAGE=mcandre/docker-etcd-slim
 
-export LOCALHOST=$$(boot2docker ip)
+export LOCALHOST=$$(docker-machine ip default)
 
 ifneq ($(OS),Windows_NT)
 	UNAME=$(shell uname -s)
@@ -17,7 +17,7 @@ build: Dockerfile
 
 run: clean-containers build
 	$(eval CONTAINER=$(shell docker run -d -p 4001:4001 -p 7001:7001 -p 2379:2379 -p 2380:2380 $(IMAGE)))
-	curl -L http://$$(boot2docker ip):2379/v2/keys/
+	curl -L http://$$(docker-machine ip default):2379/v2/keys/
 	docker images | grep $(IMAGE) | awk '{ print $$(NF-1), $$NF }'
 
 clean-containers:

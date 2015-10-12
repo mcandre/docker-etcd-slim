@@ -14,7 +14,7 @@ docker-etcd-slim is a container for an etcd server, made smaller with a few tech
 
 ```
 $ make
-curl -L http://$(boot2docker ip):2379/v2/keys/
+curl -L http://$(docker-machine ip default):2379/v2/keys/
 {"action":"get","node":{"dir":true}}
 docker images | grep mcandre/docker-etcd-slim | awk '{ print $(NF-1), $NF }'
 158.9 MB
@@ -44,8 +44,7 @@ $ sudo yum install docker-io curl
 ## non-Linux
 
 * [VirtualBox](https://www.virtualbox.org/)
-* [Vagrant](https://www.vagrantup.com/)
-* [boot2docker](http://boot2docker.io/)
+* [Docker Toolbox](https://www.docker.com/toolbox)
 
 ### Mac OS X
 
@@ -54,8 +53,7 @@ $ sudo yum install docker-io curl
 * [brew-cask](http://caskroom.io/)
 
 ```
-$ brew cask install virtualbox vagrant
-$ brew install boot2docker curl
+$ brew cask install dockertoolbox
 ```
 
 ### Windows
@@ -63,5 +61,7 @@ $ brew install boot2docker curl
 * [Chocolatey](https://chocolatey.org/)
 
 ```
-> chocolatey install docker make curl
+> chocolatey install virtualbox make
 ```
+
+* [DockerToolbox-1.8.2c.exe](https://github.com/docker/toolbox/releases/download/v1.8.2c/DockerToolbox-1.8.2c.exe)
