@@ -8,7 +8,7 @@ https://registry.hub.docker.com/u/mcandre/docker-etcd-slim/
 
 docker-etcd-slim is a container for an etcd server, made smaller with a few techniques:
 
-* Switch base image from [ubuntu](https://registry.hub.docker.com/_/ubuntu/) to [debian](https://registry.hub.docker.com/_/debian/).
+* Switch base image from debian to [alpine](https://hub.docker.com/_/alpine/).
 
 # EXAMPLE
 
