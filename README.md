@@ -17,7 +17,7 @@ $ make
 curl -L http://$(docker-machine ip default):2379/v2/keys/
 {"action":"get","node":{"dir":true}}
 docker images | grep mcandre/docker-etcd-slim | awk '{ print $(NF-1), $NF }'
-158.9 MB
+34.9 MB
 ```
 
 # REQUIREMENTS
